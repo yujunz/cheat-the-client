@@ -1,0 +1,12 @@
+{
+  "clouds": [
+    {
+      "name": "openstack-cloud-a",
+      "desc": "I am an openstack cloud"
+    },
+    {
+      "name": "openstack-cloud-b",
+      "desc": "I am another openstack cloud"
+    }
+  ]
+}
