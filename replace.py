@@ -18,3 +18,4 @@ def start():
     parser.add_argument("dst", type=str)
     args = parser.parse_args()
     return Replacer(args.src, args.dst)
+

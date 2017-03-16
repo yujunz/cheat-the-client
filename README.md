@@ -10,11 +10,11 @@ Replacing `openstack` with `mitmproxy` in request and reponse
 python -m SimpleHTTPServer
 mitmdump -dd -s "./replace.py openstack mitmproxy"
 
-curl -s http://localhost:8000/openstack-logo.png |imgcat
-curl -s --proxy http://localhost:8080 http://localhost:8000/openstack-logo.png |imgcat
+curl -s http://localhost:8000/openstack-logo.png --noproxy localhost |imgcat
+curl -s http://localhost:8000/openstack-logo.png --proxy http://localhost:8080 |imgcat
 
-curl -s http://localhost:8000/clouds.json | ack --passthru 'openstack|mitmproxy'
-curl -s --proxy http://localhost:8080 http://localhost:8000/clouds.json | ack --passthru 'openstack|mitmproxy'
+curl -s http://localhost:8000/clouds.json --noproxy localhost |ack --passthru 'openstack|mitmproxy'
+curl -s http://localhost:8000/clouds.json --proxy http://localhost:8080 |ack --passthru 'openstack|mitmproxy'
 ```
 
 ### nova list multiplier
